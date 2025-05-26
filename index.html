@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ABC</title>
+  <link rel="stylesheet" href="index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="navbar">
+  <div class="nav-container">
+    <div class="nav-left">
+      <ul class="nav-links">
+       <li><a href="#">ABC</a></li>
+        <li><a href="#">DEF</a></li>
+        <li><a href="#">JKL</a></li>
+      </ul>
+    </div> <!-- Optional: future menu -->
+<div class="nav-center">
+  <a href="#" class="logo">ABC</a>
+</div>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Account</a></li>
+        <li><a href="#">Bag</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>ABC</h1>
+      <p>BCD</p>
+       <a href="#" class="discover-btn">Discover</a>
+    </div>
+  </section>
+   <section class="zero">
+  <div class="zero-container">
+
+    <!-- Big left photo -->
+    <div class="zero-big">
+      <img src="https://cdn.pixabay.com/photo/2016/07/22/16/33/fashion-1535208_1280.jpg" alt="Classic Blazer" />
+    </div>
+
+    <!-- Right side: two smaller photos with shared title + two descriptions -->
+    <div class="zero-right">
+
+      <div class="right-images">
+        <img src="https://fearofgod.com/cdn/shop/files/FG840-083GRB_SINGLE_PLEAT_TAPERED_TROUSER_BLACK_1_1920x_a7c87194-7c83-40be-bc9c-715dd44324fb.jpg?crop=center&height=800&v=1745343627&width=600" alt="Tapered Trouser" />
+        <img src="https://fearofgod.com/cdn/shop/files/FGE260-610GRB_CLASSIC_BLAZER-BLACK_1_900x.jpg?v=1733885243" alt="Main Look" />
+      </div>
+
+      <div class="right-text">
+        <h3>Essential Looks</h3>
+        <p>Elegant trousers with a sharp tapered fit.</p>
+        <p>Styled with modern minimalist fashion aesthetics.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Landscape Photo Section -->
+<section class="landscape-banner">
+  <div class="landscape-overlay">
+    <h2>Refined Modern Wear</h2>
+    <a href="#" class="shop-btn">Shop Now</a>
+  </div>
+</section>
+<footer class="fog-footer">
+  <div class="footer-container">
+    <!-- Left Side -->
+    <div class="footer-left">
+      <p class="footer-title">Join the Conversation</p>
+      <form class="footer-form">
+        <input type="email" placeholder="EMAIL ADDRESS" required />
+        <button type="submit">→</button>
+      </form>
+    </div>
+
+    <!-- Right Side -->
+    <div class="footer-right">
+      <a href="#">CONTACT</a>
+      <a href="#">CLIENT SERVICES</a>
+      <a href="#">LEGAL NOTICES</a>
+      <a href="#">SOCIAL</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', function () {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
+
+</body>
+</html>
