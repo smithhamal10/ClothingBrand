@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ABC</title>
+  <link rel="stylesheet" href="product.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="navbar">
+  <div class="nav-container">
+    <div class="nav-left">
+      <ul class="nav-links">
+       <li><a href="#">ABC</a></li>
+        <li><a href="#">DEF</a></li>
+        <li><a href="#">JKL</a></li>
+      </ul>
+    </div>
+<div class="nav-center">
+  <a href="index.html" class="logo">NEPKIT</a>
+</div>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Account</a></li>
+        <li><a href="Bag.html">Bag</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+  <main class="product-detail-main">
+    <div class="product-detail-container">
+      <!-- Left: Gallery -->
+      <div class="gallery">
+        <img id="mainImage" src="https://fearofgod.com/cdn/shop/files/29_900x.jpg?v=1738621794" alt="Pullover Hoodie" />
+        <div class="thumbnails">
+          <img src="https://fearofgod.com/cdn/shop/files/29_900x.jpg?v=1738621794" alt="Thumbnail 1" onclick="changeImage(this.src)" />
+          <img src="https://fearofgod.com/cdn/shop/files/5_575b3f81-c82b-44ff-bb0d-604af4993c40_900x.jpg?v=1738624142" alt="Thumbnail 2" onclick="changeImage(this.src)" />
+          <img src="https://fearofgod.com/cdn/shop/files/Essentials_HO24_NBAKnicks01_0029_2_copy-3-4crop_900x.jpg?v=1732044256" alt="Thumbnail 3" onclick="changeImage(this.src)" />
+        </div>
+      </div>
+
+      <!-- Right: Product Info -->
+      <div class="product-info">
+        <h1>Pullover Hoodie - Lakers Warm Heather</h1>
+        <p class="price">$150</p>
+        <p class="description">
+          This pullover hoodie is a classic streetwear essential with premium materials and signature details.
+        </p>
+        <div class="sizes">
+          <label>Size:</label>
+          <select>
+            <option value="" disabled selected>Select size</option>
+            <option value="S">Small</option>
+            <option value="M">Medium</option>
+            <option value="L">Large</option>
+            <option value="XL">XL</option>
+          </select>
+        </div>
+        <button class="add-to-cart-btn">Add to Bag</button>
+      </div>
+    </div>
+  </main>
+  <!-- You May Also Like Section -->
+<section class="related-products">
+  <h2>You May Also Like</h2>
+  <div class="related-grid">
+
+    <!-- Related Product 1 -->
+    <div class="related-item">
+      <a href="#">
+        <div class="related-img">
+          <img src="https://fearofgod.com/cdn/shop/files/5_575b3f81-c82b-44ff-bb0d-604af4993c40_900x.jpg?v=1738624142" alt="Relaxed Hoodie – Sand">
+        </div>
+        <div class="related-info">
+          <p class="related-title">Relaxed Hoodie – Sand</p>
+          <p class="related-price">$140</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Related Product 2 -->
+    <div class="related-item">
+      <a href="#">
+        <div class="related-img">
+          <img src="https://fearofgod.com/cdn/shop/files/Essentials_HO24_NBAKnicks01_0029_2_copy-3-4crop_900x.jpg?v=1732044256" alt="Knicks Essentials Hoodie">
+        </div>
+        <div class="related-info">
+          <p class="related-title">Knicks Essentials Hoodie</p>
+          <p class="related-price">$160</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Related Product 3 -->
+    <div class="related-item">
+      <a href="#">
+        <div class="related-img">
+          <img src="https://fearofgod.com/cdn/shop/files/29_900x.jpg?v=1738621794" alt="Classic Essentials Hoodie">
+        </div>
+        <div class="related-info">
+          <p class="related-title">Classic Essentials Hoodie</p>
+          <p class="related-price">$135</p>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</section>
+  <footer class="fog-footer">
+  <div class="footer-container">
+    <!-- Left Side -->
+    <div class="footer-left">
+      <p class="footer-title">Join the Conversation</p>
+      <form class="footer-form">
+        <input type="email" placeholder="EMAIL ADDRESS" required />
+        <button type="submit">→</button>
+      </form>
+    </div>
+
+    <!-- Right Side -->
+    <div class="footer-right">
+      <a href="#">CONTACT</a>
+      <a href="#">CLIENT SERVICES</a>
+      <a href="#">LEGAL NOTICES</a>
+      <a href="#">SOCIAL</a>
+    </div>
+  </div>
+</footer>
+  <script>
+    function changeImage(src) {
+      document.getElementById('mainImage').src = src;
+    }
+     window.addEventListener('scroll', function () {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+  </script>
+</body>
+</html>
