@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ABC</title>
-  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="bag.css" />
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@300;400&display=swap" rel="stylesheet" />
 </head>
 <body>
@@ -30,45 +30,43 @@
     </div>
   </div>
 </header>
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>ABC</h1>
-      <p>BCD</p>
-       <a href="discover.html" class="discover-btn">Discover</a>
-    </div>
-  </section>
-   <section class="zero">
-  <div class="zero-container">
+<main class="bag-page">
+  <h1 class="bag-title">Your Bag</h1>
+  <div class="bag-container">
 
-    <!-- Big left photo -->
-    <div class="zero-big">
-      <img src="https://cdn.pixabay.com/photo/2016/07/22/16/33/fashion-1535208_1280.jpg" alt="Classic Blazer" />
-    </div>
-
-    <!-- Right side -->
-    <div class="zero-right">
-
-      <div class="right-images">
-        <img src="https://fearofgod.com/cdn/shop/files/FG840-083GRB_SINGLE_PLEAT_TAPERED_TROUSER_BLACK_1_1920x_a7c87194-7c83-40be-bc9c-715dd44324fb.jpg?crop=center&height=800&v=1745343627&width=600" alt="Tapered Trouser" />
-        <img src="https://fearofgod.com/cdn/shop/files/FGE260-610GRB_CLASSIC_BLAZER-BLACK_1_900x.jpg?v=1733885243" alt="Main Look" />
+    <div class="bag-items">
+      <div class="bag-item">
+        <img src="https://fearofgod.com/cdn/shop/files/FGE260-610GRB_CLASSIC_BLAZER-BLACK_1_900x.jpg?v=1733885243" alt="Product" />
+        <div class="item-details">
+          <h2>Classic Blazer</h2>
+          <p>Size: M</p>
+          <p>Qty: 1</p>
+          <p class="price">$895</p>
+        </div>
+        <button class="remove-btn">×</button>
       </div>
-
-      <div class="right-text">
-        <h3>Essential Looks</h3>
-        <p>Elegant trousers with a sharp tapered fit.</p>
-        <p>Styled with modern minimalist fashion aesthetics.</p>
-      </div>
+      <!-- Repeat .bag-item for multiple products -->
     </div>
+
+    <div class="bag-summary">
+      <h3>Summary</h3>
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <span>$895</span>
+      </div>
+      <div class="summary-row">
+        <span>Shipping</span>
+        <span>Free</span>
+      </div>
+      <div class="summary-row total">
+        <span>Total</span>
+        <span>$895</span>
+      </div>
+      <button class="checkout-btn">Checkout</button>
+    </div>
+
   </div>
-</section>
-<!-- Landscape Photo Section -->
-<section class="landscape-banner">
-  <div class="landscape-overlay">
-    <h2>Refined Modern Wear</h2>
-    <a href="shop.html" class="shop-btn">Shop Now</a>
-  </div>
-</section>
+</main>
 <footer class="fog-footer">
   <div class="footer-container">
     <!-- Left Side -->
@@ -89,7 +87,6 @@
     </div>
   </div>
 </footer>
-
 <script>
   window.addEventListener('scroll', function () {
     const navbar = document.querySelector('.navbar');
@@ -100,6 +97,5 @@
     }
   });
 </script>
-
 </body>
 </html>

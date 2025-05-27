@@ -1,4 +1,3 @@
-/* Reset and Base */
 * {
   margin: 0;
   padding: 0;
@@ -45,7 +44,7 @@ body {
   font-size: 1.2rem;
   letter-spacing: 2px;
   font-family: 'Bodoni Moda', serif;
-  color: white;
+  color: black;
   font-weight: 400;
   text-transform: uppercase;
   text-decoration: none;
@@ -69,7 +68,7 @@ body {
 }
 .nav-links li a {
   text-decoration: none;
-  color: white;
+  color:black;
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -95,188 +94,76 @@ body {
 .navbar.scrolled .logo-img {
   filter: brightness(0); /* Makes dark logo if image is dark-on-light */
 }
-.discover-btn {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 0.6rem 2rem;
-  border: 1px solid white;
-  background-color: transparent;
-  color: white;
-  font-family: 'Bodoni Moda', serif;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.discover-btn:hover {
-  background-color: white;
-  color: black;
-}
-
-/* Hero Section */
-.hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url('https://fearofgod.com/cdn/shop/files/desktop_1_-_met_page_x1800.jpg?v=1747177716') no-repeat center center / cover;
-  text-align: center;
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 4rem auto 6rem;
   padding: 0 1rem;
 }
 
-.hero-content h1 {
-  font-size: 3rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  margin-top: 1rem;
-  opacity: 0.7;
-}
-.zero {
-  padding: 60px 20px;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.zero-container {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 0;
-}
-
-/* Big left photo */
-.zero-big {
-  max-width: 50%;
-}
-
-.zero-big img {
-  width: 100%;
-  height: 800px; /* reduced from 1000px */
-  object-fit: cover;
+.product-card {
+  background: white;
+  color: black;
   border-radius: 8px;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+  overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-
-.zero-big img:hover {
-  transform: scale(1.05);
-}
-
-/* Right side container for 2 images + text */
-.zero-right {
-  flex: 1 1 40%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
-/* Two smaller images side by side */
-.right-images {
-  display: flex;
-  gap: 20px;
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgb(0 0 0 / 0.15);
 }
 
-.right-images img {
-  width: 50%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 8px;
-  cursor: pointer;
+.product-card a {
+  display: block;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  display: block;
   transition: transform 0.3s ease;
 }
 
-.right-images img:hover {
+.product-card:hover img {
   transform: scale(1.05);
 }
 
-/* Text below images */
-.right-text h3 {
+.product-card h3 {
+  font-family: 'Bodoni Moda', serif;
   font-weight: 400;
-  font-size: 1.8rem;
-  margin-bottom: 12px;
-  color: #111;
-}
-
-.right-text p {
-  font-weight: 300;
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.5;
-  margin-bottom: 8px;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .zero-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .zero-big, .zero-right {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-  .zero-big img {
-    height: 400px;
-  }
-  .right-images img {
-    width: 100%;
-    height: 250px;
-  }
-  .right-images {
-    flex-direction: column;
-  }
-}
-/* Landscape Banner Section */
-.landscape-banner {
-  position: relative;
-  width: 100%;
-  height: 700px;
-  background: url('https://cdn.pixabay.com/photo/2015/06/19/09/39/lonely-814631_1280.jpg') no-repeat center center / cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.landscape-overlay {
-  color: white;
-  text-align: center;
-  padding: 2rem;
-  border-radius: 8px;
-}
-
-.landscape-overlay h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  font-family: 'Bodoni Moda', serif;
+  font-size: 1.2rem;
+  margin: 1rem 1rem 0.5rem;
   letter-spacing: 1px;
-}
-
-.shop-btn {
-  display: inline-block;
-  padding: 0.7rem 2rem;
-  border: 1px solid white;
-  background-color: transparent;
-  color: white;
-  font-family: 'Bodoni Moda', serif;
   text-transform: uppercase;
-  font-size: 1rem;
-  letter-spacing: 2px;
-  text-decoration: none;
-  transition: all 0.3s ease;
 }
 
-.shop-btn:hover {
-  background-color: white;
-  color: black;
+.product-card .price {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 0 1rem 1.2rem;
+  color: #555;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    margin: 3rem 1rem 4rem;
+  }
+
+  .product-card h3 {
+    font-size: 1.1rem;
+  }
 }
 
 /* Footer */
@@ -362,9 +249,6 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 2.2rem;
-  }
   .footer-container {
     flex-direction: column;
     align-items: flex-start;
@@ -375,4 +259,75 @@ body {
     justify-content: flex-start;
     text-align: left;
   }
+}
+/* Category Bar Container */
+.category-bar {
+  width: 100%;
+  background: white;
+  padding: 1rem 0;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-family: 'Bodoni Moda', serif;
+  user-select: none;
+  margin-top: 60px; /* pushes below fixed navbar */
+  position: relative;
+  z-index: 10;
+}
+
+/* Category menu list */
+.category-menu {
+  list-style: none;
+  display: inline-flex;
+  gap: 4rem;
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+/* Category menu links */
+.category-menu li a {
+  position: relative;
+  color: black;
+  text-decoration: none;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Underline effect */
+.category-menu li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background-color: black;
+  transition: width 0.3s ease;
+}
+
+/* On hover & active underline expand */
+.category-menu li a:hover::after,
+.category-menu li a.active::after {
+  width: 100%;
+}
+
+/* Change color on hover & active */
+.category-menu li a:hover,
+.category-menu li a.active {
+  color: #222;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .category-menu {
+    gap: 2rem;
+    font-size: 1rem;
+  }
+}
+.shop-main {
+  margin-top: 120px; /* or whatever height your navbar + category bar occupies */
 }

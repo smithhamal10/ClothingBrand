@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ABC</title>
+  <link rel="stylesheet" href="shop.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="navbar">
+  <div class="nav-container">
+    <div class="nav-left">
+      <ul class="nav-links">
+       <li><a href="#">ABC</a></li>
+        <li><a href="#">DEF</a></li>
+        <li><a href="#">JKL</a></li>
+      </ul>
+    </div>
+<div class="nav-center">
+  <a href="index.html" class="logo">NEPKIT</a>
+</div>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Account</a></li>
+        <li><a href="Bag.html">Bag</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+<!-- Category selector bar below navbar -->
+<section class="category-bar">
+  <ul class="category-menu">
+    <li><a href="#" class="active">Men</a></li>
+    <li><a href="#">Women</a></li>
+  </ul>
+</section>
+  <main class="shop-main">
+    <div class="products-grid">
+      <!-- Repeat this product card for each product -->
+      <div class="product-card">
+        <a href="#">
+          <img src="https://fearofgod.com/cdn/shop/files/29_900x.jpg?v=1738621794" alt="Hooded Sweatshirt" />
+        </a>
+        <h3>Hooded Sweatshirt</h3>
+        <p class="price">$150</p>
+      </div>
+
+      <div class="product-card">
+        <a href="#">
+          <img src="https://fearofgod.com/cdn/shop/files/Essentials_HO24_NBAKnicks01_0029_2_copy-3-4crop_900x.jpg?v=1732044256" alt="Essentials Trousers" />
+        </a>
+        <h3>Essentials Trousers</h3>
+        <p class="price">$120</p>
+      </div>
+
+      <div class="product-card">
+        <a href="#">
+          <img src="https://fearofgod.com/cdn/shop/files/5_575b3f81-c82b-44ff-bb0d-604af4993c40_900x.jpg?v=1738624142" alt="NEPKIT NBA Tee" />
+        </a>
+        <h3>NEPKIT NBA Tee</h3>
+        <p class="price">$50</p>
+      </div>
+       <div class="product-card">
+        <a href="#">
+          <img src="https://fearofgod.com/cdn/shop/files/5_575b3f81-c82b-44ff-bb0d-604af4993c40_900x.jpg?v=1738624142" alt="NEPKIT NBA Tee" />
+        </a>
+        <h3>NEPKIT NBA Tee</h3>
+        <p class="price">$50</p>
+      </div>
+      <div class="product-card">
+        <a href="#">
+          <img src="https://fearofgod.com/cdn/shop/files/Essentials_HO24_NBAKnicks01_0029_2_copy-3-4crop_900x.jpg?v=1732044256" alt="Essentials Trousers" />
+        </a>
+        <h3>Essentials Trousers</h3>
+        <p class="price">$120</p>
+      </div>
+    </div>
+    
+  </main>
+  <footer class="fog-footer">
+  <div class="footer-container">
+    <!-- Left Side -->
+    <div class="footer-left">
+      <p class="footer-title">Join the Conversation</p>
+      <form class="footer-form">
+        <input type="email" placeholder="EMAIL ADDRESS" required />
+        <button type="submit">→</button>
+      </form>
+    </div>
+
+    <!-- Right Side -->
+    <div class="footer-right">
+      <a href="#">CONTACT</a>
+      <a href="#">CLIENT SERVICES</a>
+      <a href="#">LEGAL NOTICES</a>
+      <a href="#">SOCIAL</a>
+    </div>
+  </div>
+</footer>
+<script>
+  window.addEventListener('scroll', function () {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
+</body>
+</html>
