@@ -49,17 +49,15 @@
         <p class="description">
           This pullover hoodie is a classic streetwear essential with premium materials and signature details.
         </p>
-        <div class="sizes">
-          <label>Size:</label>
-          <select>
-            <option value="" disabled selected>Select size</option>
-            <option value="S">Small</option>
-            <option value="M">Medium</option>
-            <option value="L">Large</option>
-            <option value="XL">XL</option>
-          </select>
-        </div>
-        <button class="add-to-cart-btn">Add to Bag</button>
+            <select id="size">
+  <option value="" disabled selected>Select size</option>
+  <option value="S">Small</option>
+  <option value="M">Medium</option>
+  <option value="L">Large</option>
+  <option value="XL">XL</option>
+</select>
+<button class="add-to-cart-btn" onclick="addToBag()">Add to Bag</button>
+
       </div>
     </div>
   </main>
@@ -141,6 +139,39 @@
       navbar.classList.remove('scrolled');
     }
   });
+   function changeImage(src) {
+    document.getElementById('mainImage').src = src;
+  }
+
+  window.addEventListener('scroll', function () {
+    const navbar = document.querySelector('.navbar');
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  function addToBag() {
+    const product = {
+      name: "Pullover Hoodie - Lakers Warm Heather",
+      price: 150,
+      size: document.getElementById("size").value,
+      img: document.getElementById("mainImage").src
+    };
+
+    if (!product.size) {
+      alert("Please select a size.");
+      return;
+    }
+
+    let bag = JSON.parse(localStorage.getItem("bag")) || [];
+    bag.push(product);
+    localStorage.setItem("bag", JSON.stringify(bag));
+    window.location.href = "Bag.html";
+  }
+  function addToBag(name, img, price, size) {
+  const bag = JSON.parse(localStorage.getItem("bag")) || [];
+  bag.push({ name, img, price, size });
+  localStorage.setItem("bag", JSON.stringify(bag));
+  alert("Item added to bag!");
+}
   </script>
 </body>
 </html>

@@ -9,18 +9,18 @@
 </head>
 <body>
 
-  <header class="navbar">
+<header class="navbar">
   <div class="nav-container">
     <div class="nav-left">
       <ul class="nav-links">
-       <li><a href="#">ABC</a></li>
+        <li><a href="#">ABC</a></li>
         <li><a href="#">DEF</a></li>
         <li><a href="#">JKL</a></li>
       </ul>
     </div>
-<div class="nav-center">
-  <a href="index.html" class="logo">NEPKIT</a>
-</div>
+    <div class="nav-center">
+      <a href="index.html" class="logo">NEPKIT</a>
+    </div>
     <div class="nav-right">
       <ul class="nav-links">
         <li><a href="#">Search</a></li>
@@ -30,29 +30,21 @@
     </div>
   </div>
 </header>
+
 <main class="bag-page">
   <h1 class="bag-title">Your Bag</h1>
   <div class="bag-container">
-
-    <div class="bag-items">
-      <div class="bag-item">
-        <img src="https://fearofgod.com/cdn/shop/files/FGE260-610GRB_CLASSIC_BLAZER-BLACK_1_900x.jpg?v=1733885243" alt="Product" />
-        <div class="item-details">
-          <h2>Classic Blazer</h2>
-          <p>Size: M</p>
-          <p>Qty: 1</p>
-          <p class="price">$895</p>
-        </div>
-        <button class="remove-btn">×</button>
-      </div>
-      <!-- Repeat .bag-item for multiple products -->
+    <!-- Bag Items -->
+    <div class="bag-items" id="bagItems">
+      <!-- Items will be injected here dynamically -->
     </div>
 
+    <!-- Summary -->
     <div class="bag-summary">
       <h3>Summary</h3>
       <div class="summary-row">
         <span>Subtotal</span>
-        <span>$895</span>
+        <span id="subtotalPrice">$0</span>
       </div>
       <div class="summary-row">
         <span>Shipping</span>
@@ -60,16 +52,15 @@
       </div>
       <div class="summary-row total">
         <span>Total</span>
-        <span>$895</span>
+        <span id="totalPrice">$0</span>
       </div>
       <button class="checkout-btn">Checkout</button>
     </div>
-
   </div>
 </main>
+
 <footer class="fog-footer">
   <div class="footer-container">
-    <!-- Left Side -->
     <div class="footer-left">
       <p class="footer-title">Join the Conversation</p>
       <form class="footer-form">
@@ -77,8 +68,6 @@
         <button type="submit">→</button>
       </form>
     </div>
-
-    <!-- Right Side -->
     <div class="footer-right">
       <a href="#">CONTACT</a>
       <a href="#">CLIENT SERVICES</a>
@@ -87,15 +76,56 @@
     </div>
   </div>
 </footer>
+
 <script>
+  // Scroll effect on navbar
   window.addEventListener('scroll', function () {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
   });
+
+  // Load items from localStorage
+  function loadBag() {
+    const bag = JSON.parse(localStorage.getItem("bag")) || [];
+    const container = document.getElementById("bagItems");
+    const subtotalEl = document.getElementById("subtotalPrice");
+    const totalEl = document.getElementById("totalPrice");
+
+    let subtotal = 0;
+    container.innerHTML = "";
+
+    bag.forEach((item, index) => {
+      subtotal += item.price;
+
+      const div = document.createElement("div");
+      div.className = "bag-item";
+      div.innerHTML = `
+        <img src="${item.img}" alt="${item.name}" />
+        <div class="item-details">
+          <h2>${item.name}</h2>
+          <p>Size: ${item.size}</p>
+          <p>Qty: 1</p>
+          <p class="price">$${item.price}</p>
+        </div>
+        <button class="remove-btn" onclick="removeItem(${index})">×</button>
+      `;
+      container.appendChild(div);
+    });
+
+    subtotalEl.textContent = `$${subtotal}`;
+    totalEl.textContent = `$${subtotal}`;
+  }
+
+  function removeItem(index) {
+    let bag = JSON.parse(localStorage.getItem("bag")) || [];
+    bag.splice(index, 1);
+    localStorage.setItem("bag", JSON.stringify(bag));
+    loadBag();
+  }
+
+  // Initialize bag on page load
+  loadBag();
 </script>
+
 </body>
 </html>
