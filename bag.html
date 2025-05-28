@@ -75,78 +75,90 @@
 </footer>
 
 <script>
-  // Scroll effect on navbar
-  window.addEventListener('scroll', function () {
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     navbar.classList.toggle('scrolled', window.scrollY > 50);
   });
-  function removeItem(index) {
-    let bag = JSON.parse(localStorage.getItem("bag")) || [];
-    bag.splice(index, 1);
-    localStorage.setItem("bag", JSON.stringify(bag));
+
+  document.addEventListener("DOMContentLoaded", () => {
     loadBag();
-  }
-
-  // Initialize bag on page load
-  loadBag();
-  function loadBag() {
-  const bag = JSON.parse(localStorage.getItem("bag")) || [];
-  const container = document.getElementById("bagItems");
-  const subtotalEl = document.getElementById("subtotalPrice");
-  const totalEl = document.getElementById("totalPrice");
-
-  let subtotal = 0;
-  container.innerHTML = "";
-
-  if (bag.length === 0) {
-    container.innerHTML = `<p class="empty-cart-message">You don't have any items in your cart.</p>`;
-    subtotalEl.textContent = `$0`;
-    totalEl.textContent = `$0`;
-    return;
-  }
-
-  bag.forEach((item, index) => {
-    subtotal += item.price;
-
-    const div = document.createElement("div");
-    div.className = "bag-item";
-    div.innerHTML = `
-      <img src="${item.img}" alt="${item.name}" />
-      <div class="item-details">
-        <h2>${item.name}</h2>
-        <p>Size: ${item.size}</p>
-        <p>Qty: 1</p>
-        <p class="price">$${item.price}</p>
-      </div>
-      <button class="remove-btn" onclick="removeItem(${index})">×</button>
-    `;
-    container.appendChild(div);
   });
 
-  subtotalEl.textContent = `$${subtotal}`;
-  totalEl.textContent = `$${subtotal}`;
-}function updateQuantity(index, newQty) {
-  let bag = JSON.parse(localStorage.getItem("bag")) || [];
-  bag[index].qty = parseInt(newQty);
-  localStorage.setItem("bag", JSON.stringify(bag));
-  loadBag();
-}
-function removeItem(index) {
-  const bagItems = document.querySelectorAll('.bag-item');
-  const itemElement = bagItems[index];
-  itemElement.classList.add('fade-out');
+  function loadBag() {
+    const bag = JSON.parse(localStorage.getItem("bag")) || [];
+    const container = document.getElementById("bagItems");
+    const subtotalEl = document.getElementById("subtotalPrice");
+    const totalEl = document.getElementById("totalPrice");
 
-  setTimeout(() => {
+    let subtotal = 0;
+    container.innerHTML = "";
+
+    if (bag.length === 0) {
+      container.innerHTML = `<p class="empty-cart-message">You don't have any items in your cart.</p>`;
+      subtotalEl.textContent = `$0`;
+      totalEl.textContent = `$0`;
+      return;
+    }
+
+    bag.forEach((item, index) => {
+      // Default quantity to 1 if missing
+      if (!item.qty || item.qty < 1) {
+        item.qty = 1;
+      }
+      subtotal += item.price * item.qty;
+
+      const div = document.createElement("div");
+      div.className = "bag-item";
+                  div.innerHTML = `
+  <img src="${item.img}" alt="${item.name}" />
+  <div class="item-details">
+    <h2>${item.name}</h2>
+    <p>Size: ${item.size}</p>
+    <p>Color: ${
+      item.color
+        ? `<span class="color-box" style="background-color: ${item.color};"></span> ${item.color}`
+        : "N/A"
+    }</p>
+    <p>Qty: ${item.qty || 1}</p>
+    <p class="price">$${(item.price * (item.qty || 1)).toFixed(2)}</p>
+  </div>
+  <button class="remove-btn" onclick="removeItem(${index})">×</button>
+`;
+
+
+      container.appendChild(div);
+    });
+
+    subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+    totalEl.textContent = `$${subtotal.toFixed(2)}`;
+
+    // Save updated quantities back to localStorage
+    localStorage.setItem("bag", JSON.stringify(bag));
+  }
+
+  function removeItem(index) {
+    const bagItems = document.querySelectorAll('.bag-item');
+    const itemElement = bagItems[index];
+
+    itemElement.classList.add('fade-out');
+
+    setTimeout(() => {
+      let bag = JSON.parse(localStorage.getItem("bag")) || [];
+      bag.splice(index, 1);
+      localStorage.setItem("bag", JSON.stringify(bag));
+      loadBag();
+    }, 300);
+  }
+
+  function changeQuantity(index, delta) {
     let bag = JSON.parse(localStorage.getItem("bag")) || [];
-    bag.splice(index, 1);
+    let newQty = (bag[index].qty || 1) + delta;
+    if (newQty < 1) return; // Prevent quantity below 1
+    bag[index].qty = newQty;
     localStorage.setItem("bag", JSON.stringify(bag));
     loadBag();
-  }, 300);
-}
-document.addEventListener("DOMContentLoaded", () => {
-  loadBag();
-});
-
+  }
 </script>
 
 </body>

@@ -346,4 +346,14 @@ body {
   transform: translateX(20px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
+.color-box {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ccc;
+  margin-right: 8px;
+  vertical-align: middle;
+  border-radius: 3px;
+}
+
 

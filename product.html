@@ -9,168 +9,177 @@
 </head>
 <body>
 
+  <!-- Navbar -->
   <header class="navbar">
-  <div class="nav-container">
-    <div class="nav-left">
-      <ul class="nav-links">
-       <li><a href="shop.html">COLLECTIONS</a></li>
-        <li><a href="new_arriavls.html">NEW ARRIVALS</a></li>
-      </ul>
+    <div class="nav-container">
+      <div class="nav-left">
+        <ul class="nav-links">
+          <li><a href="shop.html">COLLECTIONS</a></li>
+          <li><a href="new_arrivals.html">NEW ARRIVALS</a></li>
+        </ul>
+      </div>
+      <div class="nav-center">
+        <a href="index.html" class="logo">NEPKIT</a>
+      </div>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#">Search</a></li>
+          <li><a href="#">Account</a></li>
+          <li><a href="Bag.html">Bag</a></li>
+        </ul>
+      </div>
     </div>
-<div class="nav-center">
-  <a href="index.html" class="logo">NEPKIT</a>
-</div>
-    <div class="nav-right">
-      <ul class="nav-links">
-        <li><a href="#">Search</a></li>
-        <li><a href="#">Account</a></li>
-        <li><a href="Bag.html">Bag</a></li>
-      </ul>
-    </div>
-  </div>
-</header>
+  </header>
+
+  <!-- Product Details -->
   <main class="product-detail-main">
     <div class="product-detail-container">
-      <!-- Left: Gallery -->
+
+      <!-- Gallery -->
       <div class="gallery">
         <img id="mainImage" src="https://fearofgod.com/cdn/shop/files/29_900x.jpg?v=1738621794" alt="Pullover Hoodie" />
         <div class="thumbnails">
-          <img src="https://fearofgod.com/cdn/shop/files/29_900x.jpg?v=1738621794" alt="Thumbnail 1" onclick="changeImage(this.src)" />
-          <img src="https://fearofgod.com/cdn/shop/files/5_575b3f81-c82b-44ff-bb0d-604af4993c40_900x.jpg?v=1738624142" alt="Thumbnail 2" onclick="changeImage(this.src)" />
-          <img src="https://fearofgod.com/cdn/shop/files/Essentials_HO24_NBAKnicks01_0029_2_copy-3-4crop_900x.jpg?v=1732044256" alt="Thumbnail 3" onclick="changeImage(this.src)" />
+          <img src="https://fearofgod.com/cdn/shop/files/29_900x.jpg?v=1738621794" onclick="changeImage(this.src)" />
+          <img src="https://fearofgod.com/cdn/shop/files/5_575b3f81-c82b-44ff-bb0d-604af4993c40_900x.jpg?v=1738624142" onclick="changeImage(this.src)" />
+          <img src="https://fearofgod.com/cdn/shop/files/Essentials_HO24_NBAKnicks01_0029_2_copy-3-4crop_900x.jpg?v=1732044256" onclick="changeImage(this.src)" />
         </div>
       </div>
 
-      <!-- Right: Product Info -->
+      <!-- Product Info -->
       <div class="product-info">
         <h1>Pullover Hoodie - Lakers Warm Heather</h1>
         <p class="price">$150</p>
         <p class="description">
           This pullover hoodie is a classic streetwear essential with premium materials and signature details.
         </p>
-            <select id="size">
-  <option value="" disabled selected>Select size</option>
-  <option value="S">Small</option>
-  <option value="M">Medium</option>
-  <option value="L">Large</option>
-  <option value="XL">XL</option>
-</select>
-<button class="add-to-cart-btn" onclick="addToBag()">Add to Bag</button>
 
+        <!-- Color Selection -->
+        <div class="color-options">
+          <p>Select color:</p>
+          <div class="swatch-group" id="color">
+            <span class="swatch" data-color="Black" style="background-color: black;"></span>
+            <span class="swatch" data-color="Heather Grey" style="background-color: #d3d3d3;"></span>
+            <span class="swatch" data-color="Sand" style="background-color: #f5deb3;"></span>
+          </div>
+        </div>
+<input type="hidden" id="color" />
+        <!-- Size Dropdown -->
+        <select id="size">
+          <option value="" disabled selected>Select size</option>
+          <option value="S">Small</option>
+          <option value="M">Medium</option>
+          <option value="L">Large</option>
+          <option value="XL">XL</option>
+        </select>
+
+        <!-- Add to Bag -->
+        <button class="add-to-cart-btn" onclick="addToBag()">Add to Bag</button>
       </div>
     </div>
   </main>
-  <!-- You May Also Like Section -->
-<section class="related-products">
-  <h2>You May Also Like</h2>
-  <div class="related-grid">
 
-    <!-- Related Product 1 -->
-    <div class="related-item">
-      <a href="#">
-        <div class="related-img">
-          <img src="https://fearofgod.com/cdn/shop/files/5_575b3f81-c82b-44ff-bb0d-604af4993c40_900x.jpg?v=1738624142" alt="Relaxed Hoodie – Sand">
-        </div>
-        <div class="related-info">
-          <p class="related-title">Relaxed Hoodie – Sand</p>
-          <p class="related-price">$140</p>
-        </div>
-      </a>
+  <!-- Related Products -->
+  <section class="related-products">
+    <h2>You May Also Like</h2>
+    <div class="related-grid">
+
+      <div class="related-item">
+        <a href="#">
+          <div class="related-img">
+            <img src="https://fearofgod.com/cdn/shop/files/5_575b3f81-c82b-44ff-bb0d-604af4993c40_900x.jpg?v=1738624142" alt="Relaxed Hoodie – Sand">
+          </div>
+          <div class="related-info">
+            <p class="related-title">Relaxed Hoodie – Sand</p>
+            <p class="related-price">$140</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="related-item">
+        <a href="#">
+          <div class="related-img">
+            <img src="https://fearofgod.com/cdn/shop/files/Essentials_HO24_NBAKnicks01_0029_2_copy-3-4crop_900x.jpg?v=1732044256" alt="Knicks Essentials Hoodie">
+          </div>
+          <div class="related-info">
+            <p class="related-title">Knicks Essentials Hoodie</p>
+            <p class="related-price">$160</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="related-item">
+        <a href="#">
+          <div class="related-img">
+            <img src="https://fearofgod.com/cdn/shop/files/29_900x.jpg?v=1738621794" alt="Classic Essentials Hoodie">
+          </div>
+          <div class="related-info">
+            <p class="related-title">Classic Essentials Hoodie</p>
+            <p class="related-price">$135</p>
+          </div>
+        </a>
+      </div>
+
     </div>
+  </section>
 
-    <!-- Related Product 2 -->
-    <div class="related-item">
-      <a href="#">
-        <div class="related-img">
-          <img src="https://fearofgod.com/cdn/shop/files/Essentials_HO24_NBAKnicks01_0029_2_copy-3-4crop_900x.jpg?v=1732044256" alt="Knicks Essentials Hoodie">
-        </div>
-        <div class="related-info">
-          <p class="related-title">Knicks Essentials Hoodie</p>
-          <p class="related-price">$160</p>
-        </div>
-      </a>
-    </div>
-
-    <!-- Related Product 3 -->
-    <div class="related-item">
-      <a href="#">
-        <div class="related-img">
-          <img src="https://fearofgod.com/cdn/shop/files/29_900x.jpg?v=1738621794" alt="Classic Essentials Hoodie">
-        </div>
-        <div class="related-info">
-          <p class="related-title">Classic Essentials Hoodie</p>
-          <p class="related-price">$135</p>
-        </div>
-      </a>
-    </div>
-
-  </div>
-</section>
+  <!-- Footer -->
   <footer class="fog-footer">
-  <div class="footer-container">
-    <!-- Left Side -->
-    <div class="footer-left">
-      <p class="footer-title">Join the Conversation</p>
-      <form class="footer-form">
-        <input type="email" placeholder="EMAIL ADDRESS" required />
-        <button type="submit">→</button>
-      </form>
+    <div class="footer-container">
+      <div class="footer-left">
+        <p class="footer-title">Join the Conversation</p>
+        <form class="footer-form">
+          <input type="email" placeholder="EMAIL ADDRESS" required />
+          <button type="submit">→</button>
+        </form>
+      </div>
+      <div class="footer-right">
+        <a href="#">CONTACT</a>
+        <a href="#">CLIENT SERVICES</a>
+        <a href="#">LEGAL NOTICES</a>
+        <a href="#">SOCIAL</a>
+      </div>
     </div>
+  </footer>
 
-    <!-- Right Side -->
-    <div class="footer-right">
-      <a href="#">CONTACT</a>
-      <a href="#">CLIENT SERVICES</a>
-      <a href="#">LEGAL NOTICES</a>
-      <a href="#">SOCIAL</a>
-    </div>
-  </div>
-</footer>
+  <!-- JavaScript -->
   <script>
-    function changeImage(src) {
-      document.getElementById('mainImage').src = src;
-    }
-     window.addEventListener('scroll', function () {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
-   function changeImage(src) {
-    document.getElementById('mainImage').src = src;
-  }
-
-  window.addEventListener('scroll', function () {
-    const navbar = document.querySelector('.navbar');
-    navbar.classList.toggle('scrolled', window.scrollY > 50);
-  });
-
-  function addToBag() {
-    const product = {
-      name: "Pullover Hoodie - Lakers Warm Heather",
-      price: 150,
-      size: document.getElementById("size").value,
-      img: document.getElementById("mainImage").src
-    };
-
-    if (!product.size) {
-      alert("Please select a size.");
-      return;
-    }
-
-    let bag = JSON.parse(localStorage.getItem("bag")) || [];
-    bag.push(product);
-    localStorage.setItem("bag", JSON.stringify(bag));
-    window.location.href = "Bag.html";
-  }
-  function addToBag(name, img, price, size) {
-  const bag = JSON.parse(localStorage.getItem("bag")) || [];
-  bag.push({ name, img, price, size });
-  localStorage.setItem("bag", JSON.stringify(bag));
-  alert("Item added to bag!");
+       function changeImage(src) {
+  document.getElementById('mainImage').src = src;
 }
+
+window.addEventListener('scroll', function () {
+  const navbar = document.querySelector('.navbar');
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+document.querySelectorAll('.swatch').forEach((swatch) => {
+  swatch.addEventListener('click', function () {
+    document.querySelectorAll('.swatch').forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+    document.getElementById('color').value = this.getAttribute('data-color');
+  });
+});
+
+function addToBag() {
+  const product = {
+    name: "Pullover Hoodie - Lakers Warm Heather",
+    price: 150,
+    size: document.getElementById("size").value,
+    color: document.getElementById("color").value,
+    img: document.getElementById("mainImage").src
+  };
+
+  if (!product.size || !product.color) {
+    alert("Please select both a size and a color.");
+    return;
+  }
+
+  let bag = JSON.parse(localStorage.getItem("bag")) || [];
+  bag.push(product);
+  localStorage.setItem("bag", JSON.stringify(bag));
+  window.location.href = "Bag.html";
+}
+
   </script>
 </body>
 </html>
