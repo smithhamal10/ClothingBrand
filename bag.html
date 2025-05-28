@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NEPKIT</title>
   <link rel="stylesheet" href="bag.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -38,15 +38,15 @@
       <h3>Summary</h3>
       <div class="summary-row">
         <span>Subtotal</span>
-        <span id="subtotalPrice">$0</span>
+        <span id="subtotalPrice">Rs0</span>
       </div>
       <div class="summary-row">
         <span>Shipping</span>
-        <span>Free</span>
+        <span>Rs0</span>
       </div>
       <div class="summary-row total">
         <span>Total</span>
-        <span id="totalPrice">$0</span>
+        <span id="totalPrice">Rs0</span>
       </div>
      <a href="checkout.html" class="checkout-btn">Checkout</a>
     </div>
@@ -92,8 +92,8 @@
 
     if (bag.length === 0) {
       container.innerHTML = `<p class="empty-cart-message">You don't have any items in your cart.</p>`;
-      subtotalEl.textContent = `$0`;
-      totalEl.textContent = `$0`;
+      subtotalEl.textContent = `Rs0`;
+      totalEl.textContent = `Rs0`;
       return;
     }
 
@@ -140,7 +140,6 @@
       loadBag();
     }, 300);
   }
-
   function changeQuantity(index, delta) {
     let bag = JSON.parse(localStorage.getItem("bag")) || [];
     let newQty = (bag[index].qty || 1) + delta;
