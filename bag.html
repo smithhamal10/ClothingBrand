@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ABC</title>
+  <title>NEPKIT</title>
   <link rel="stylesheet" href="bag.css" />
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@300;400&display=swap" rel="stylesheet" />
 </head>
@@ -32,11 +32,8 @@
 
 <main class="bag-page">
   <div class="bag-container">
-    <!-- Bag Items -->
     <div class="bag-items" id="bagItems">
-      <!-- Items will be injected here dynamically -->
     </div>
-    <!-- Summary -->
     <div class="bag-summary">
       <h3>Summary</h3>
       <div class="summary-row">
@@ -75,7 +72,6 @@
 </footer>
 
 <script>
-  // Navbar scroll effect
   window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     navbar.classList.toggle('scrolled', window.scrollY > 50);
@@ -102,7 +98,6 @@
     }
 
     bag.forEach((item, index) => {
-      // Default quantity to 1 if missing
       if (!item.qty || item.qty < 1) {
         item.qty = 1;
       }
@@ -111,32 +106,27 @@
       const div = document.createElement("div");
       div.className = "bag-item";
                   div.innerHTML = `
-  <img src="${item.img}" alt="${item.name}" />
-  <div class="item-details">
-    <h2>${item.name}</h2>
-    <p>Size: ${item.size}</p>
-    <p>Color: ${
-      item.color
-        ? `<span class="color-box" style="background-color: ${item.color};"></span> ${item.color}`
-        : "N/A"
-    }</p>
-    <p>Qty: ${item.qty || 1}</p>
-    <p class="price">$${(item.price * (item.qty || 1)).toFixed(2)}</p>
-  </div>
-  <button class="remove-btn" onclick="removeItem(${index})">×</button>
-`;
+                            <img src="${item.img}" alt="${item.name}" />
+                            <div class="item-details">
+                              <h2>${item.name}</h2>
+                              <p>Size: ${item.size}</p>
+                              <p>Color: ${
+                                item.color
+                                  ? `<span class="color-box" style="background-color: ${item.color};"></span> ${item.color}`
+                                  : "N/A"
+                              }</p>
+                              <p>Qty: ${item.qty || 1}</p>
+                              <p class="price">$${(item.price * (item.qty || 1)).toFixed(2)}</p>
+                            </div>
+                                   <button class="remove-btn" onclick="removeItem(${index})">×</button>`;
 
 
       container.appendChild(div);
     });
-
     subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
     totalEl.textContent = `$${subtotal.toFixed(2)}`;
-
-    // Save updated quantities back to localStorage
     localStorage.setItem("bag", JSON.stringify(bag));
   }
-
   function removeItem(index) {
     const bagItems = document.querySelectorAll('.bag-item');
     const itemElement = bagItems[index];
@@ -154,7 +144,7 @@
   function changeQuantity(index, delta) {
     let bag = JSON.parse(localStorage.getItem("bag")) || [];
     let newQty = (bag[index].qty || 1) + delta;
-    if (newQty < 1) return; // Prevent quantity below 1
+    if (newQty < 1) return;
     bag[index].qty = newQty;
     localStorage.setItem("bag", JSON.stringify(bag));
     loadBag();

@@ -342,3 +342,15 @@ body {
     text-align: left;
   }
 }
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
