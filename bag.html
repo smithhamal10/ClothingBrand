@@ -14,7 +14,7 @@
     <div class="nav-left">
       <ul class="nav-links">
         <li><a href="shop.html">Collections</a></li>
-        <li><a href="New_arrivals.html">NEW ARRIVALS</a></li>
+        <li><a href="New_arrival.html">NEW ARRIVALS</a></li>
       </ul>
     </div>
     <div class="nav-center">
@@ -24,20 +24,18 @@
       <ul class="nav-links">
         <li><a href="#">Search</a></li>
         <li><a href="#">Account</a></li>
-        <li><a href="Bag.html">Bag</a></li>
+        <li><a href="bag.html">Bag</a></li>
       </ul>
     </div>
   </div>
 </header>
 
 <main class="bag-page">
-  <h1 class="bag-title">Your Bag</h1>
   <div class="bag-container">
     <!-- Bag Items -->
     <div class="bag-items" id="bagItems">
       <!-- Items will be injected here dynamically -->
     </div>
-
     <!-- Summary -->
     <div class="bag-summary">
       <h3>Summary</h3>
@@ -82,39 +80,6 @@
     const navbar = document.querySelector('.navbar');
     navbar.classList.toggle('scrolled', window.scrollY > 50);
   });
-
-  // Load items from localStorage
-  function loadBag() {
-    const bag = JSON.parse(localStorage.getItem("bag")) || [];
-    const container = document.getElementById("bagItems");
-    const subtotalEl = document.getElementById("subtotalPrice");
-    const totalEl = document.getElementById("totalPrice");
-
-    let subtotal = 0;
-    container.innerHTML = "";
-
-    bag.forEach((item, index) => {
-      subtotal += item.price;
-
-      const div = document.createElement("div");
-      div.className = "bag-item";
-      div.innerHTML = `
-        <img src="${item.img}" alt="${item.name}" />
-        <div class="item-details">
-          <h2>${item.name}</h2>
-          <p>Size: ${item.size}</p>
-          <p>Qty: 1</p>
-          <p class="price">$${item.price}</p>
-        </div>
-        <button class="remove-btn" onclick="removeItem(${index})">×</button>
-      `;
-      container.appendChild(div);
-    });
-
-    subtotalEl.textContent = `$${subtotal}`;
-    totalEl.textContent = `$${subtotal}`;
-  }
-
   function removeItem(index) {
     let bag = JSON.parse(localStorage.getItem("bag")) || [];
     bag.splice(index, 1);
@@ -160,7 +125,28 @@
 
   subtotalEl.textContent = `$${subtotal}`;
   totalEl.textContent = `$${subtotal}`;
+}function updateQuantity(index, newQty) {
+  let bag = JSON.parse(localStorage.getItem("bag")) || [];
+  bag[index].qty = parseInt(newQty);
+  localStorage.setItem("bag", JSON.stringify(bag));
+  loadBag();
 }
+function removeItem(index) {
+  const bagItems = document.querySelectorAll('.bag-item');
+  const itemElement = bagItems[index];
+  itemElement.classList.add('fade-out');
+
+  setTimeout(() => {
+    let bag = JSON.parse(localStorage.getItem("bag")) || [];
+    bag.splice(index, 1);
+    localStorage.setItem("bag", JSON.stringify(bag));
+    loadBag();
+  }, 300);
+}
+document.addEventListener("DOMContentLoaded", () => {
+  loadBag();
+});
+
 </script>
 
 </body>
