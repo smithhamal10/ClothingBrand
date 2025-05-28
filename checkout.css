@@ -12,7 +12,7 @@ body {
   height: 200vh;
 }
 
-/* Navbar: Transparent by default */
+/* Navbar*/
 .navbar {
   position: fixed;
   top: 0;
@@ -21,8 +21,6 @@ body {
   background-color: transparent;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* Navbar Container Layout */
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -32,14 +30,11 @@ body {
   margin: auto;
   position: relative;
 }
-
-/* Center the logo absolutely */
 .nav-center {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
-
 .logo {
   font-size: 1.2rem;
   letter-spacing: 2px;
@@ -53,9 +48,6 @@ body {
 .logo:hover {
   opacity: 0.6;
 }
-
-
-/* Right Links */
 .nav-right .nav-links {
   display: flex;
   gap: 2rem;
@@ -74,13 +66,9 @@ body {
   letter-spacing: 1px;
   transition: color 0.3s ease, opacity 0.3s ease;
 }
-
-/* On hover */
 .nav-links li a:hover {
   opacity: 0.6;
 }
-
-/* After scroll: White background + black text */
 .navbar.scrolled {
   background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -90,9 +78,8 @@ body {
 .navbar.scrolled .nav-links li a {
   color: black;
 }
-/* Optional: Change logo image on scroll for contrast (if needed) */
 .navbar.scrolled .logo-img {
-  filter: brightness(0); /* Makes dark logo if image is dark-on-light */
+  filter: brightness(0); 
 }
 /* Footer */
 .fog-footer {
@@ -198,10 +185,10 @@ body {
     text-align: left;
   }
 }
-/* Main Checkout Layout */
+/*Checkout */
 .checkout-page {
-  padding-top: 100px; /* account for fixed navbar */
-  padding-bottom: 120px; /* space for fixed footer */
+  padding-top: 100px;
+  padding-bottom: 120px; 
   background-color: #fff;
   color: #000;
   min-height: 100vh;
@@ -217,7 +204,7 @@ body {
   justify-content: space-between;
 }
 
-/* Billing Info Form */
+/* Billing Form */
 .billing-info {
   flex: 1;
   min-width: 300px;

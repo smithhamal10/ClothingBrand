@@ -90,23 +90,21 @@ body {
 .navbar.scrolled .nav-links li a {
   color: black;
 }
-/* Optional: Change logo image on scroll for contrast (if needed) */
 .navbar.scrolled .logo-img {
-  filter: brightness(0); /* Makes dark logo if image is dark-on-light */
+  filter: brightness(0);
 }
-
 .product-detail-main {
-  padding: 120px 80px 40px; /* Top padding increased to 120px */
+  padding: 120px 80px 40px;
   display: flex;
   justify-content: center;
 }
-
 .product-detail-container {
   display: flex;
   gap: 50px;
   max-width: 1100px;
   width: 100%;
 }
+/*select section*/
 select {
   display: block;
   width: 100%;
@@ -149,70 +147,58 @@ select {
   border: 2px solid #333;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
-
-
+/*gallery section*/
 .gallery {
   flex: 1;
 }
-
 .gallery img#mainImage {
   width: 100%;
-  max-width: 400px; /* was 500px before */
+  max-width: 400px;
   object-fit: cover;
   border: 1px solid #ddd;
   margin-bottom: 15px;
   cursor: pointer;
 }
-
 .thumbnails {
   display: flex;
   gap: 15px;
 }
-
 .thumbnails img {
   width: 60px;
   cursor: pointer;
   border: 1px solid transparent;
   transition: border 0.3s;
 }
-
 .thumbnails img:hover {
   border: 1px solid #000;
 }
-
 .product-info {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-
 .product-info h1 {
   font-size: 2rem;
   margin: 0;
 }
-
 .price {
   font-size: 1.5rem;
   font-weight: 600;
 }
-
 .description {
   font-size: 1rem;
   line-height: 1.4;
   color: #555;
 }
-
 .sizes label {
   font-weight: 600;
   margin-right: 10px;
 }
-
 .sizes select {
   padding: 8px;
   font-size: 1rem;
 }
-
 .add-to-cart-btn {
   background: #111;
   color: #fff;
@@ -223,57 +209,47 @@ select {
   font-weight: 700;
   transition: background 0.3s ease;
 }
-
 .add-to-cart-btn:hover {
   background: #333;
 }
-
 .related-products {
   padding: 60px 20px;
   background-color: #fff;
   border-top: 1px solid #eaeaea;
 }
-
 .related-products h2 {
   font-size: 24px;
   text-align: center;
   margin-bottom: 40px;
   font-family: 'Bodoni Moda', serif;
 }
-
 .related-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
 }
-
 .related-item {
   max-width: 260px;
   text-align: left;
   transition: transform 0.3s ease;
 }
-
 .related-item:hover {
   transform: translateY(-5px);
 }
-
 .related-img img {
   width: 100%;
   border-radius: 10px;
 }
-
 .related-info {
   margin-top: 12px;
 }
-
 .related-title {
   font-size: 14px;
   color: #111;
   font-family: 'Bodoni Moda', serif;
   margin: 4px 0;
 }
-
 .related-price {
   font-size: 14px;
   color: black;
@@ -282,8 +258,6 @@ select {
   text-decoration: none;
   color: inherit;
 }
-
-
 /* Footer */
 .fog-footer {
   background: #fff;
@@ -292,7 +266,6 @@ select {
   font-family: 'Bodoni Moda', serif;
   font-size: 13px;
 }
-
 .footer-container {
   max-width: 1200px;
   margin: auto;
@@ -302,12 +275,10 @@ select {
   align-items: flex-end;
   gap: 30px;
 }
-
 .footer-left {
   flex: 1;
   min-width: 250px;
 }
-
 .footer-title {
   margin-bottom: 10px;
   font-weight: 400;
@@ -315,14 +286,12 @@ select {
   letter-spacing: 0.5px;
   color: black;
 }
-
 .footer-form {
   display: flex;
   align-items: center;
   border-bottom: 1px solid #000;
   max-width: 300px;
 }
-
 .footer-form input {
   border: none;
   background: transparent;
@@ -332,7 +301,6 @@ select {
   flex: 1;
   outline: none;
 }
-
 .footer-form button {
   background: none;
   border: none;
@@ -340,7 +308,6 @@ select {
   cursor: pointer;
   padding: 0 5px;
 }
-
 .footer-right {
   display: flex;
   flex-wrap: wrap;
@@ -351,7 +318,6 @@ select {
   min-width: 250px;
   text-align: right;
 }
-
 .footer-right a,
 .footer-right span.country {
   color: #000;
@@ -360,11 +326,9 @@ select {
   font-weight: 300;
   letter-spacing: 0.5px;
 }
-
 .footer-right a:hover {
   text-decoration: underline;
 }
-
 /* Responsive */
 @media (max-width: 768px) {
   .footer-container {
@@ -406,7 +370,6 @@ select {
     font-size: 13px;
   }
 }
-
 @media (max-width: 480px) {
   .related-products h2 {
     font-size: 18px;

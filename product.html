@@ -8,8 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@300;400&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-  <!-- Navbar -->
   <header class="navbar">
     <div class="nav-container">
       <div class="nav-left">
@@ -30,12 +28,8 @@
       </div>
     </div>
   </header>
-
-  <!-- Product Details -->
   <main class="product-detail-main">
     <div class="product-detail-container">
-
-      <!-- Gallery -->
       <div class="gallery">
         <img id="mainImage" src="https://fearofgod.com/cdn/shop/files/29_900x.jpg?v=1738621794" alt="Pullover Hoodie" />
         <div class="thumbnails">
@@ -44,16 +38,12 @@
           <img src="https://fearofgod.com/cdn/shop/files/Essentials_HO24_NBAKnicks01_0029_2_copy-3-4crop_900x.jpg?v=1732044256" onclick="changeImage(this.src)" />
         </div>
       </div>
-
-      <!-- Product Info -->
       <div class="product-info">
         <h1>Pullover Hoodie - Lakers Warm Heather</h1>
         <p class="price">$150</p>
         <p class="description">
           This pullover hoodie is a classic streetwear essential with premium materials and signature details.
         </p>
-
-        <!-- Color Selection -->
         <div class="color-options">
           <p>Select color:</p>
           <div class="swatch-group" id="color">
@@ -63,7 +53,6 @@
           </div>
         </div>
 <input type="hidden" id="color" />
-        <!-- Size Dropdown -->
         <select id="size">
           <option value="" disabled selected>Select size</option>
           <option value="S">Small</option>
@@ -71,18 +60,13 @@
           <option value="L">Large</option>
           <option value="XL">XL</option>
         </select>
-
-        <!-- Add to Bag -->
         <button class="add-to-cart-btn" onclick="addToBag()">Add to Bag</button>
       </div>
     </div>
   </main>
-
-  <!-- Related Products -->
   <section class="related-products">
     <h2>You May Also Like</h2>
     <div class="related-grid">
-
       <div class="related-item">
         <a href="#">
           <div class="related-img">
@@ -94,7 +78,6 @@
           </div>
         </a>
       </div>
-
       <div class="related-item">
         <a href="#">
           <div class="related-img">
@@ -121,8 +104,6 @@
 
     </div>
   </section>
-
-  <!-- Footer -->
   <footer class="fog-footer">
     <div class="footer-container">
       <div class="footer-left">
@@ -140,8 +121,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- JavaScript -->
   <script>
        function changeImage(src) {
   document.getElementById('mainImage').src = src;
@@ -159,7 +138,6 @@ document.querySelectorAll('.swatch').forEach((swatch) => {
     document.getElementById('color').value = this.getAttribute('data-color');
   });
 });
-
 function addToBag() {
   const product = {
     name: "Pullover Hoodie - Lakers Warm Heather",
@@ -168,18 +146,15 @@ function addToBag() {
     color: document.getElementById("color").value,
     img: document.getElementById("mainImage").src
   };
-
   if (!product.size || !product.color) {
     alert("Please select both a size and a color.");
     return;
   }
-
   let bag = JSON.parse(localStorage.getItem("bag")) || [];
   bag.push(product);
   localStorage.setItem("bag", JSON.stringify(bag));
   window.location.href = "Bag.html";
 }
-
   </script>
 </body>
 </html>

@@ -62,7 +62,6 @@
     <aside class="order-summary">
       <h2>Order Summary</h2>
       <div id="summaryItems">
-        <!-- Filled by JS -->
       </div>
       <div class="summary-row">
         <span>Subtotal</span>
@@ -132,8 +131,6 @@
     subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
     totalEl.textContent = `$${subtotal.toFixed(2)}`;
   }
-
-  // Example form submission handler
   document.getElementById("checkoutForm").addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -148,12 +145,10 @@
       return;
     }
 
-    // For now, just show an alert - integrate payment gateway here as needed
     alert(`Thank you, ${name}! Your order with payment method "${paymentMethod}" has been placed.`);
 
-    // Optionally clear cart after checkout
     localStorage.removeItem("bag");
-    window.location.href = "index.html"; // Redirect to homepage or order confirmation page
+    window.location.href = "index.html";
   });
 </script>
 </body>

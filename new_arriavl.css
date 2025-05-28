@@ -1,4 +1,3 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +13,6 @@ body {
   color: black;
   font-family: 'Helvetica Neue', sans-serif;
 }
-
 /* Navbar */
 .navbar {
   position: fixed;
@@ -65,7 +63,6 @@ body {
   left: 50%;
   transform: translateX(-50%);
 }
-
 .logo {
   font-size: 1.2rem;
   letter-spacing: 2px;
@@ -76,18 +73,15 @@ body {
   font-family: 'Bodoni Moda', serif;
   transition: opacity 0.3s ease;
 }
-
 .logo:hover {
   opacity: 0.6;
 }
-
 /* Main content */
 .main-content {
-  flex: 1; /* grow to fill remaining space */
-  padding: 120px 20px 100px; /* padding top for fixed navbar and bottom for footer */
+  flex: 1;
+  padding: 120px 20px 100px;
   text-align: center;
 }
-
 .main-content h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
@@ -98,7 +92,7 @@ body {
   color: #666;
 }
 
-/* Footer fixed */
+/* Footer*/
 .fog-footer {
   position: fixed;
   bottom: 0;
