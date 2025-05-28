@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout - NEPKIT</title>
+  <link rel="stylesheet" href="checkout.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-container">
+    <div class="nav-left">
+      <ul class="nav-links">
+        <li><a href="shop.html">Collections</a></li>
+        <li><a href="New_arrival.html">NEW ARRIVALS</a></li>
+      </ul>
+    </div>
+    <div class="nav-center">
+      <a href="index.html" class="logo">NEPKIT</a>
+    </div>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Account</a></li>
+        <li><a href="bag.html">Bag</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main class="checkout-page">
+  <div class="checkout-container">
+    
+    <section class="billing-info">
+      <h2>Billing Information</h2>
+      <form id="checkoutForm">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required/>
+
+        <label for="address">Shipping Address</label>
+        <input type="text" id="address" required/>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" required />
+
+        <h3>Payment Method</h3>
+        <select id="paymentMethod" required>
+          <option value="">-- Select Payment Method --</option>
+          <option value="Payemnt Gateway">Payment Gateway</option>
+          <option value="cod">Cash on Delivery</option>
+        </select>
+
+        <button type="submit" class="checkout-btn">Place Order</button>
+      </form>
+    </section>
+
+    <aside class="order-summary">
+      <h2>Order Summary</h2>
+      <div id="summaryItems">
+        <!-- Filled by JS -->
+      </div>
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <span id="subtotalPrice">$0</span>
+      </div>
+      <div class="summary-row">
+        <span>Shipping</span>
+        <span>Free</span>
+      </div>
+      <div class="summary-row total">
+        <span>Total</span>
+        <span id="totalPrice">$0</span>
+      </div>
+    </aside>
+
+  </div>
+</main>
+<footer class="fog-footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <p class="footer-title">Join the Conversation</p>
+      <form class="footer-form">
+        <input type="email" placeholder="EMAIL ADDRESS" required />
+        <button type="submit">→</button>
+      </form>
+    </div>
+    <div class="footer-right">
+      <a href="#">CONTACT</a>
+      <a href="#">CLIENT SERVICES</a>
+      <a href="#">LEGAL NOTICES</a>
+      <a href="#">SOCIAL</a>
+    </div>
+  </div>
+</footer>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    loadOrderSummary();
+  });
+
+  function loadOrderSummary() {
+    const bag = JSON.parse(localStorage.getItem("bag")) || [];
+    const summaryContainer = document.getElementById("summaryItems");
+    const subtotalEl = document.getElementById("subtotalPrice");
+    const totalEl = document.getElementById("totalPrice");
+
+    let subtotal = 0;
+    summaryContainer.innerHTML = "";
+
+    if (bag.length === 0) {
+      summaryContainer.innerHTML = `<p>Your cart is empty.</p>`;
+      subtotalEl.textContent = `$0`;
+      totalEl.textContent = `$0`;
+      return;
+    }
+
+    bag.forEach(item => {
+      subtotal += item.price * (item.qty || 1);
+      const itemDiv = document.createElement("div");
+      itemDiv.className = "summary-item";
+      itemDiv.innerHTML = `
+        <p>${item.name} (${item.qty || 1})</p>
+        <p>$${(item.price * (item.qty || 1)).toFixed(2)}</p>
+      `;
+      summaryContainer.appendChild(itemDiv);
+    });
+
+    subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+    totalEl.textContent = `$${subtotal.toFixed(2)}`;
+  }
+
+  // Example form submission handler
+  document.getElementById("checkoutForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const paymentMethod = document.getElementById("paymentMethod").value;
+
+    if (!paymentMethod) {
+      alert("Please select a payment method.");
+      return;
+    }
+
+    // For now, just show an alert - integrate payment gateway here as needed
+    alert(`Thank you, ${name}! Your order with payment method "${paymentMethod}" has been placed.`);
+
+    // Optionally clear cart after checkout
+    localStorage.removeItem("bag");
+    window.location.href = "index.html"; // Redirect to homepage or order confirmation page
+  });
+</script>
+</body>
+</html>
