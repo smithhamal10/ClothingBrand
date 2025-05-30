@@ -47,11 +47,11 @@ body {
 }
 
 .logo {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   letter-spacing: 2px;
   font-family: 'Bodoni Moda', serif;
   color: white;
-  font-weight: 400;
+  font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -98,7 +98,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('https://fearofgod.com/cdn/shop/files/desktop_1_-_met_page_x1800.jpg?v=1747177716') no-repeat center center / cover;
+  background: url('images/banner1.jpg') no-repeat center center / cover;
   text-align: center;
   padding: 0 1rem;
 }

@@ -28,31 +28,30 @@
       </div>
     </div>
   </header>
+
   <main class="product-detail-main">
     <div class="product-detail-container">
       <div class="gallery">
-        <img id="mainImage" src="https://fearofgod.com/cdn/shop/files/29_900x.jpg?v=1738621794" alt="Pullover Hoodie" />
-        <div class="thumbnails">
-          <img src="https://fearofgod.com/cdn/shop/files/29_900x.jpg?v=1738621794" onclick="changeImage(this.src)" />
-          <img src="https://fearofgod.com/cdn/shop/files/5_575b3f81-c82b-44ff-bb0d-604af4993c40_900x.jpg?v=1738624142" onclick="changeImage(this.src)" />
-          <img src="https://fearofgod.com/cdn/shop/files/Essentials_HO24_NBAKnicks01_0029_2_copy-3-4crop_900x.jpg?v=1732044256" onclick="changeImage(this.src)" />
+        <img id="mainImage" src="https://fearofgod.com/cdn/shop/files/29_900x.jpg?v=1738621794" alt="Product Image" />
+        <div class="thumbnails" id="thumbnails">
+          <!-- Thumbnails can be optionally populated -->
         </div>
       </div>
       <div class="product-info">
-        <h1>Pullover Hoodie - Lakers Warm Heather</h1>
-        <p class="price">Rs150</p>
+        <h1 id="productName">Pullover Hoodie - Lakers Warm Heather</h1>
+        <p class="price" id="productPrice">Rs150</p>
         <p class="description">
           This pullover hoodie is a classic streetwear essential with premium materials and signature details.
         </p>
         <div class="color-options">
           <p>Select color:</p>
-          <div class="swatch-group" id="color">
+          <div class="swatch-group">
             <span class="swatch" data-color="Black" style="background-color: black;"></span>
             <span class="swatch" data-color="Heather Grey" style="background-color: #d3d3d3;"></span>
             <span class="swatch" data-color="Sand" style="background-color: #f5deb3;"></span>
           </div>
         </div>
-         <input type="hidden" id="color" />
+        <input type="hidden" id="color" />
         <select id="size">
           <option value="" disabled selected>Select size</option>
           <option value="S">Small</option>
@@ -64,45 +63,35 @@
       </div>
     </div>
   </main>
+
   <section class="related-products">
     <h2>You May Also Like</h2>
     <div class="related-grid">
       <div class="related-item">
         <a href="#">
           <div class="related-img">
-            <img src="https://fearofgod.com/cdn/shop/files/5_575b3f81-c82b-44ff-bb0d-604af4993c40_900x.jpg?v=1738624142" alt="Relaxed Hoodie – Sand">
+            <img src="images/nepkit2.jpeg" >
           </div>
           <div class="related-info">
-            <p class="related-title">Relaxed Hoodie – Sand</p>
-            <p class="related-price">Rs140</p>
+            <p class="related-title">T-SHIRT</p>
+            <p class="related-price">Rs100</p>
           </div>
         </a>
       </div>
       <div class="related-item">
         <a href="#">
           <div class="related-img">
-            <img src="https://fearofgod.com/cdn/shop/files/Essentials_HO24_NBAKnicks01_0029_2_copy-3-4crop_900x.jpg?v=1732044256" alt="Knicks Essentials Hoodie">
+            <img src="images/nepkit3.jpeg">
           </div>
           <div class="related-info">
-            <p class="related-title">Knicks Essentials Hoodie</p>
+            <p class="related-title">T-SHIRT</p>
             <p class="related-price">Rs160</p>
           </div>
         </a>
       </div>
-      <div class="related-item">
-        <a href="#">
-          <div class="related-img">
-            <img src="https://fearofgod.com/cdn/shop/files/29_900x.jpg?v=1738621794" alt="Classic Essentials Hoodie">
-          </div>
-          <div class="related-info">
-            <p class="related-title">Classic Essentials Hoodie</p>
-            <p class="related-price">Rs135</p>
-          </div>
-        </a>
-      </div>
-
     </div>
   </section>
+
   <footer class="fog-footer">
     <div class="footer-container">
       <div class="footer-left">
@@ -118,40 +107,60 @@
       </div>
     </div>
   </footer>
+
   <script>
-       function changeImage(src) {
-  document.getElementById('mainImage').src = src;
-}
+    function changeImage(src) {
+      document.getElementById('mainImage').src = src;
+    }
 
-window.addEventListener('scroll', function () {
-  const navbar = document.querySelector('.navbar');
-  navbar.classList.toggle('scrolled', window.scrollY > 50);
-});
+    window.addEventListener('scroll', function () {
+      const navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
 
-document.querySelectorAll('.swatch').forEach((swatch) => {
-  swatch.addEventListener('click', function () {
-    document.querySelectorAll('.swatch').forEach(s => s.classList.remove('selected'));
-    this.classList.add('selected');
-    document.getElementById('color').value = this.getAttribute('data-color');
-  });
-});
-function addToBag() {
-  const product = {
-    name: "Pullover Hoodie - Lakers Warm Heather",
-    price: 150,
-    size: document.getElementById("size").value,
-    color: document.getElementById("color").value,
-    img: document.getElementById("mainImage").src
-  };
-  if (!product.size || !product.color) {
-    alert("Please select both a size and a color.");
-    return;
-  }
-  let bag = JSON.parse(localStorage.getItem("bag")) || [];
-  bag.push(product);
-  localStorage.setItem("bag", JSON.stringify(bag));
-  window.location.href = "Bag.html";
-}
+    document.querySelectorAll('.swatch').forEach((swatch) => {
+      swatch.addEventListener('click', function () {
+        document.querySelectorAll('.swatch').forEach(s => s.classList.remove('selected'));
+        this.classList.add('selected');
+        document.getElementById('color').value = this.getAttribute('data-color');
+      });
+    });
+
+    function addToBag() {
+      const product = {
+        name: document.getElementById("productName").textContent,
+        price: parseFloat(document.getElementById("productPrice").textContent.replace("Rs", "")),
+        size: document.getElementById("size").value,
+        color: document.getElementById("color").value,
+        img: document.getElementById("mainImage").src
+      };
+      if (!product.size || !product.color) {
+        alert("Please select both a size and a color.");
+        return;
+      }
+      let bag = JSON.parse(localStorage.getItem("bag")) || [];
+      bag.push(product);
+      localStorage.setItem("bag", JSON.stringify(bag));
+      window.location.href = "Bag.html";
+    }
+
+    // Load selected product
+    document.addEventListener("DOMContentLoaded", function () {
+      const storedProduct = JSON.parse(localStorage.getItem("selectedProduct"));
+      if (storedProduct) {
+        document.getElementById("productName").textContent = storedProduct.name;
+        document.getElementById("productPrice").textContent = "Rs" + storedProduct.price;
+        document.getElementById("mainImage").src = storedProduct.image;
+
+        // Optionally update thumbnails
+        const thumbs = document.getElementById("thumbnails");
+        thumbs.innerHTML = `
+          <img src="${storedProduct.image}" onclick="changeImage(this.src)" />
+          <img src="images/nepkit2.jpeg" onclick="changeImage(this.src)" />
+          <img src="images/nepkit3.jpeg" onclick="changeImage(this.src)" />
+        `;
+      }
+    });
   </script>
 </body>
 </html>
