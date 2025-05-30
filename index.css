@@ -19,7 +19,18 @@ body {
   z-index: 999;
   background-color: transparent;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  
 }
+.navbar:hover {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar:hover .logo,
+.navbar:hover .nav-links li a {
+  color: black;
+}
+
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -60,10 +71,11 @@ body {
 .nav-links li a {
   text-decoration: none;
   color: white;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: color 0.3s ease, opacity 0.3s ease;
+  
 }
 .nav-links li a:hover {
   opacity: 0.6;
@@ -106,13 +118,11 @@ body {
   text-align: center;
   padding: 0 1rem;
 }
-
 .hero-content h1 {
   font-size: 3rem;
   font-weight: 600;
   letter-spacing: 2px;
 }
-
 .hero-content p {
   font-size: 1.2rem;
   margin-top: 1rem;
@@ -353,4 +363,32 @@ body {
     text-align: left;
   }
 }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content, .zero-container, .landscape-overlay {
+  animation: fadeInUp 1s ease both;
+}
+.footer-right a:hover {
+  text-decoration: underline;
+  opacity: 0.7;
+}
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+
 

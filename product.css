@@ -12,7 +12,7 @@ body {
   height: 200vh;
 }
 
-/* Navbar: Transparent by default */
+/* Navbar*/
 .navbar {
   position: fixed;
   top: 0;
@@ -21,8 +21,6 @@ body {
   background-color: transparent;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* Navbar Container Layout */
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -32,8 +30,6 @@ body {
   margin: auto;
   position: relative;
 }
-
-/* Center the logo absolutely */
 .nav-center {
   position: absolute;
   left: 50%;
@@ -53,9 +49,6 @@ body {
 .logo:hover {
   opacity: 0.6;
 }
-
-
-/* Right Links */
 .nav-right .nav-links {
   display: flex;
   gap: 2rem;
@@ -74,18 +67,13 @@ body {
   letter-spacing: 1px;
   transition: color 0.3s ease, opacity 0.3s ease;
 }
-
-/* On hover */
 .nav-links li a:hover {
   opacity: 0.6;
 }
-
-/* After scroll: White background + black text */
 .navbar.scrolled {
   background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-
 .navbar.scrolled .logo,
 .navbar.scrolled .nav-links li a {
   color: black;
@@ -104,7 +92,6 @@ body {
   max-width: 1100px;
   width: 100%;
 }
-/*select section*/
 select {
   display: block;
   width: 100%;
