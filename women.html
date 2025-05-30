@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NEPKIT</title>
+   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="women.css" />
+</head>
+<body>
+<header class="navbar">
+  <div class="nav-container">
+    <div class="nav-left">
+      <ul class="nav-links">
+        <li><a href="shop.html">COLLECTIONS</a></li>
+        <li><a href="new_arrival.html">NEW ARRIVALS</a></li>
+      </ul>
+    </div>
+    <div class="nav-center">
+      <a href="index.html" class="logo">NEPKIT</a>
+    </div>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Account</a></li>
+        <li><a href="Bag.html">Bag</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+<section class="category-bar">
+  <ul class="category-menu">
+    <li><a href="shop.html">Men</a></li>
+    <li><a href="women.html"class="active">Women</a></li>
+  </ul>
+</section>
+<main class="main-content">
+  <h1>New Arrivals</h1>
+  <p>Coming Soon</p>
+</main>
+<footer class="fog-footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <p class="footer-title">Join the Conversation</p>
+      <form class="footer-form">
+        <input type="email" placeholder="EMAIL ADDRESS" required />
+        <button type="submit">→</button>
+      </form>
+    </div>
+    <div class="footer-right">
+      <a href="contact.html">CONTACT</a>
+      <a href="#">SOCIAL</a>
+    </div>
+  </div>
+</footer>
+<script>
+  window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
+</body>
+</html>
