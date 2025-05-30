@@ -122,11 +122,14 @@ body {
   font-size: 3rem;
   font-weight: 600;
   letter-spacing: 2px;
+  margin-top: 130px;
+  
 }
 .hero-content p {
   font-size: 1.2rem;
   margin-top: 1rem;
   opacity: 0.7;
+  margin-top: 30px;
 }
 .zero {
   padding: 60px 20px;
@@ -147,7 +150,7 @@ body {
 }
 .zero-big img {
   width: 100%;
-  height: 800px;
+  height: 700px;
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
@@ -167,8 +170,8 @@ body {
   gap: 20px;
 }
 .right-images img {
-  width: 50%;
-  height: 300px;
+  width: 60%;
+  height: 500px;
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
@@ -201,11 +204,11 @@ body {
     max-width: 100%;
   }
   .zero-big img {
-    height: 400px;
+    height: 500px;
   }
   .right-images img {
     width: 100%;
-    height: 250px;
+    height: 300px;
   }
   .right-images {
     flex-direction: column;
@@ -234,6 +237,7 @@ body {
   margin-bottom: 1rem;
   font-family: 'Bodoni Moda', serif;
   letter-spacing: 1px;
+  margin-top: 200px;
 }
 
 .shop-btn {
@@ -349,17 +353,6 @@ body {
 
   .footer-right {
     justify-content: flex-start;
-    text-align: left;
-  }
-}
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    align-items: flex-start;
     text-align: left;
   }
 }
