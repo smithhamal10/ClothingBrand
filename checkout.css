@@ -9,7 +9,6 @@ body {
   font-family: 'Helvetica Neue', sans-serif;
   background: white;
   color: black;
-  height: 200vh;
 }
 
 /* Navbar */
@@ -266,7 +265,7 @@ body {
 .order-summary {
   flex: 0.8;
   min-width: 280px;
-  background: #f9f9f9;
+  background: black;
   padding: 30px;
   border: 1px solid #eee;
   border-radius: 6px;
@@ -276,6 +275,7 @@ body {
   font-size: 1.4rem;
   margin-bottom: 20px;
   font-weight: 400;
+  color: white;
 }
 
 .summary-item {
@@ -283,6 +283,7 @@ body {
   justify-content: space-between;
   margin-bottom: 10px;
   font-size: 0.95rem;
+  color: white;
 }
 
 .summary-row {
@@ -290,6 +291,7 @@ body {
   justify-content: space-between;
   font-size: 1rem;
   margin: 15px 0;
+  color: white;
 }
 
 .summary-row.total {
