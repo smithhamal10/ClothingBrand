@@ -513,3 +513,10 @@ body {
     font-size: 1rem;
   }
 }
+.subscribe-message {
+  color: #fff;
+  font-size: 14px;
+  margin-top: 10px;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
