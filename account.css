@@ -1,0 +1,103 @@
+/* Reset basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Bodoni Moda', serif;
+  background-color: #f9f9f9;
+  color: #111;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.account-wrapper {
+  width: 100%;
+  max-width: 480px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.account-box h1 {
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 0.5px;
+}
+
+.account-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-box input {
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background: #fafafa;
+  transition: border 0.3s ease;
+}
+
+.account-box input:focus {
+  outline: none;
+  border-color: #000;
+  background-color: #fff;
+}
+
+.account-box button {
+  padding: 14px;
+  background-color: #111;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.account-box button:hover {
+  background-color: #333;
+}
+
+.bottom-links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.bottom-links a {
+  color: #111;
+  text-decoration: none;
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+}
+
+.bottom-links a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .account-wrapper {
+    padding: 30px 20px;
+  }
+
+  .account-box h1 {
+    font-size: 24px;
+  }
+
+  .account-box input,
+  .account-box button {
+    font-size: 15px;
+  }
+}
+
