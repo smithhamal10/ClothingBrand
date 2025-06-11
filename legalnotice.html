@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Legal Notice - NEPKIT</title>
+  <link rel="stylesheet" href="legalnotice.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="nav-left">
+        <ul class="nav-links">
+          <li><a href="shop.html">Collections</a></li>
+          <li><a href="New_arrival.html">New Arrivals</a></li>
+        </ul>
+      </div>
+      <div class="nav-center">
+        <a href="index.html" class="logo">NEPKIT</a>
+      </div>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#">Search</a></li>
+          <li><a href="account.html">Account</a></li>
+          <li><a href="bag.html">Bag</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="legal-container">
+    <h1>Legal Notice & Privacy Policy</h1>
+    <p>Effective Date: January 1, 2025</p>
+
+    <section>
+      <h2>1. Introduction</h2>
+      <p>Welcome to NEPKIT. Your privacy is important to us. This policy outlines how we collect, use, and protect your personal information.</p>
+    </section>
+
+    <section>
+      <h2>2. Information We Collect</h2>
+      <p>We collect personal information such as your name, email, address, and payment details when you purchase or sign up.</p>
+    </section>
+
+    <section>
+      <h2>3. How We Use Information</h2>
+      <p>We use your data to fulfill orders, improve our services, and communicate updates or promotions with your consent.</p>
+    </section>
+
+    <section>
+      <h2>4. Sharing of Information</h2>
+      <p>We do not sell your personal data. Information may be shared with trusted third parties like payment gateways or delivery services.</p>
+    </section>
+
+    <section>
+      <h2>5. Your Rights</h2>
+      <p>You can request access to your data, make corrections, or delete your account by contacting us at support@nepkit.com.</p>
+    </section>
+
+    <section>
+      <h2>6. Contact</h2>
+      <p>If you have any questions, please contact us at <strong>support@nepkit.com</strong>.</p>
+    </section>
+  </main>
+
+  <footer class="fog-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <p class="footer-title">Join the Conversation</p>
+        <form class="footer-form" id="subscribe-form">
+          <input type="email" id="email-input" placeholder="EMAIL ADDRESS" required />
+          <button type="submit">→</button>
+        </form>
+        <p id="subscribe-message" class="subscribe-message" style="display: none;">Thank you for subscribing.</p>
+      </div>
+      <div class="footer-right">
+        <a href="legalnotice.html">LEGAL NOTICES</a>
+        <a href="client.html">CLIENT SERVICES</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="#">SOCIAL</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function () {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    document.getElementById('subscribe-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const emailInput = document.getElementById('email-input');
+      const message = document.getElementById('subscribe-message');
+      if (emailInput.value.trim() !== "") {
+        message.style.display = 'block';
+        message.textContent = "Thank you for subscribing.";
+        emailInput.value = "";
+      }
+    });
+  </script>
+</body>
+</html>
