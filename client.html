@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Client Services | NEPKIT</title>
+  <link rel="stylesheet" href="client.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-container">
+    <div class="nav-left">
+      <ul class="nav-links">
+        <li><a href="shop.html">Collections</a></li>
+        <li><a href="New_arrival.html">New Arrivals</a></li>
+      </ul>
+    </div>
+    <div class="nav-center">
+      <a href="index.html" class="logo">NEPKIT</a>
+    </div>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#">Search</a></li>
+        <li><a href="account.html">Account</a></li>
+        <li><a href="bag.html">Bag</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<section class="faq-section">
+  <div class="faq-container">
+    <h1>CLIENT SERVICES</h1>
+
+    <div class="faq-item">
+      <h3>What is the return policy?</h3>
+      <p>NEPKIT offers returns within 14 days of purchase. Items must be unworn and in original condition with tags.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How can I track my order?</h3>
+      <p>You will receive a tracking number via email once your order ships. You can also track it through your account dashboard.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do you ship internationally?</h3>
+      <p>Yes, NEPKIT ships globally. Delivery times and shipping rates may vary depending on your region.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I contact customer support?</h3>
+      <p>Feel free to reach out via our <a href="contact.html">Contact</a> page. We're here to help you!</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I change or cancel my order?</h3>
+      <p>Orders can be changed or canceled within 2 hours of placing them. Please contact support immediately if needed.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="fog-footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <p class="footer-title">Join the Conversation</p>
+      <form class="footer-form" id="subscribe-form">
+        <input type="email" id="email-input" placeholder="EMAIL ADDRESS" required />
+        <button type="submit">→</button>
+      </form>
+      <p id="subscribe-message" class="subscribe-message" style="display: none;">Thank you for subscribing.</p>
+    </div>
+    <div class="footer-right">
+      <a href="client.html">CLIENT SERVICES</a>
+      <a href="contact.html">CONTACT</a>
+      <a href="#">SOCIAL</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', function () {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+  document.getElementById('subscribe-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const emailInput = document.getElementById('email-input');
+    const message = document.getElementById('subscribe-message');
+    if (emailInput.value.trim() !== "") {
+      message.style.display = 'block';
+      message.textContent = "Thank you for subscribing.";
+      emailInput.value = "";
+    }
+  });
+</script>
+
+</body>
+</html>
