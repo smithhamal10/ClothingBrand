@@ -35,28 +35,53 @@
     <h1>CLIENT SERVICES</h1>
 
     <div class="faq-item">
-      <h3>What is the return policy?</h3>
-      <p>NEPKIT offers returns within 14 days of purchase. Items must be unworn and in original condition with tags.</p>
+      <div class="faq-question">
+        <h3>What is the return policy?</h3>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>NEPKIT offers returns within 14 days of purchase. Items must be unworn and in original condition with tags.</p>
+      </div>
     </div>
 
     <div class="faq-item">
-      <h3>How can I track my order?</h3>
-      <p>You will receive a tracking number via email once your order ships. You can also track it through your account dashboard.</p>
+      <div class="faq-question">
+        <h3>How can I track my order?</h3>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>You will receive a tracking number via email once your order ships. You can also track it through your account dashboard.</p>
+      </div>
     </div>
 
     <div class="faq-item">
-      <h3>Do you ship internationally?</h3>
-      <p>Yes, NEPKIT ships globally. Delivery times and shipping rates may vary depending on your region.</p>
+      <div class="faq-question">
+        <h3>Do you ship internationally?</h3>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Yes, NEPKIT ships globally. Delivery times and shipping rates may vary depending on your region.</p>
+      </div>
     </div>
 
     <div class="faq-item">
-      <h3>How do I contact customer support?</h3>
-      <p>Feel free to reach out via our <a href="contact.html">Contact</a> page. We're here to help you!</p>
+      <div class="faq-question">
+        <h3>How do I contact customer support?</h3>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Feel free to reach out via our <a href="contact.html">Contact</a> page. We're here to help you!</p>
+      </div>
     </div>
 
     <div class="faq-item">
-      <h3>Can I change or cancel my order?</h3>
-      <p>Orders can be changed or canceled within 2 hours of placing them. Please contact support immediately if needed.</p>
+      <div class="faq-question">
+        <h3>Can I change or cancel my order?</h3>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Orders can be changed or canceled within 2 hours of placing them. Please contact support immediately if needed.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -80,6 +105,7 @@
 </footer>
 
 <script>
+  // Navbar scroll effect
   window.addEventListener('scroll', function () {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
@@ -89,6 +115,7 @@
     }
   });
 
+  // Newsletter subscription
   document.getElementById('subscribe-form').addEventListener('submit', function (e) {
     e.preventDefault();
     const emailInput = document.getElementById('email-input');
@@ -98,6 +125,18 @@
       message.textContent = "Thank you for subscribing.";
       emailInput.value = "";
     }
+  });
+
+  // FAQ toggle
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const icon = item.querySelector('.toggle-icon');
+
+    question.addEventListener('click', () => {
+      item.classList.toggle('active');
+      icon.textContent = item.classList.contains('active') ? '×' : '+';
+    });
   });
 </script>
 
